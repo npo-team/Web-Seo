@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網站建置期 SEO 優化技術講義</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --background-color: #f7fafc;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin: 0 0 10px 0;
+        }
+
+        .header p {
+            color: #718096;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 4px;
+            background-color: #fafBfc;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: "■";
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .list-group {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .list-group li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .list-group li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .keyword {
+            font-weight: bold;
+            color: var(--primary-color);
+            background-color: #ebf8ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #a0aec0;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        
+        /* 列印樣式設定 */
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>網站建置期 SEO 優化技術指南</h1>
+            <p>Technical SEO & Architecture Checklist ｜ 內部教育訓練講義</p>
+        </div>
+
+        <div class="section">
+            <h2>1. 伺服器與基礎安全性</h2>
+            <ul class="list-group">
+                <li><span class="keyword">HTTPS 加密協定</span>：全站強制使用 SSL 憑證，確保資料傳輸安全，符合搜尋引擎排名基本要求。</li>
+                <li><span class="keyword">伺服器回應速度</span>：優化硬體資源與資料庫查詢，縮短 TTFB（首位元組時間），確保基礎連線效率。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. 檢索與索引控制 (Crawlability)</h2>
+            <ul class="list-group">
+                <li><span class="keyword">Robots.txt</span>：正確配置以引導爬蟲抓取重要頁面，阻擋無價值參數網址，節省檢索預算。</li>
+                <li><span class="keyword">XML Sitemap</span>：建置動態生成的網站地圖，確保文章、產品等核心頁面即時更新並提交。</li>
+                <li><span class="keyword">Canonical 標準網址</span>：針對動態參數（如篩選、排序、分頁）設定標準網址標記，避免重複內容分散權重。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. 網站架構與網址結構</h2>
+            <ul class="list-group">
+                <li><span class="keyword">扁平化架構</span>：重要頁面須能從首頁以 3 至 4 次點擊內抵達，確保爬蟲能深入檢索。</li>
+                <li><span class="keyword">語意化網址 (SEF)</span>：採用簡短、包含關鍵字的靜態化網址，並使用連字號 (-) 分隔單字。</li>
+                <li><span class="keyword">內部連結與麵包屑</span>：建立符合搜尋意圖的導覽結構，麵包屑需具備權重傳遞與輔助定位功能。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. 行動裝置與效能指標 (Core Web Vitals)</h2>
+            <ul class="list-group">
+                <li><span class="keyword">RWD 響應式設計</span>：全面落實行動裝置優先檢索 (Mobile-First Indexing)，觸控元件間距需符合規範。</li>
+                <li><span class="keyword">LCP (最大內容繪製)</span>：首屏最大元素載入時間應低於 2.5 秒。</li>
+                <li><span class="keyword">INP (互動延遲)</span>：優化 JavaScript 執行效率，減少主執行緒阻塞。</li>
+                <li><span class="keyword">CLS (累計版面位移)</span>：為圖片與多媒體預留長寬比空間，避免畫面非預期跳動。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. 網頁標籤與結構化資料 (On-Page)</h2>
+            <ul class="list-group">
+                <li><span class="keyword">Meta 標籤系統</span>：後台必須開放自訂 Title 與 Meta Description 的獨立欄位。</li>
+                <li><span class="keyword">H1-H6 階層語意</span>：遵循 HTML 規範，單頁唯一 H1，依照內容邏輯依序使用標題標籤。</li>
+                <li><span class="keyword">圖片 Alt 屬性</span>：圖片管理系統需具備替代文字欄位，提供搜尋引擎辨識圖片內容。</li>
+                <li><span class="keyword">Schema.org JSON-LD</span>：將結構化資料（如文章、常見問題、機構資訊等）整合入網頁程式碼，爭取複合式搜尋結果。</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            提供專業網站 SEO 架構檢核基準 ｜ 版權所有，請勿作為非授權商業用途
+        </div>
+    </div>
+
+</body>
+</html>
